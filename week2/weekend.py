@@ -27,6 +27,13 @@ while attempts > 0:
     print(f"Your guess: {char_guess}")
     if char_guess in hangman_word:
         reveal[char_guess] = True
-    attempts -= 1
-    
-print(hangman_word)
+    else:
+        attempts -= 1
+        
+    if False not in reveal.values():
+        print("You Win!!")
+        print(f"The word is: {hangman_word}")
+        break
+if attempts == 0:
+    print("You Lose!!")    
+    print(f"The word is: {hangman_word}")
