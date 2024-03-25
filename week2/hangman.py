@@ -21,8 +21,11 @@ while attempts > 0:
         else:
             print("_", end=" ")
     print(f"\nAvailable letters: \n{letters}")
-    char_guess = input("\nGuess a letter:")[0]
+    char_guess = input("Guess a letter:")[0]
     char_guess = char_guess.lower()
+    if char_guess.isalpha() == False:
+        print("Enter a letter")
+        continue
     letters.remove(char_guess)
     print(f"Your guess: {char_guess}")
     if char_guess in hangman_word:
